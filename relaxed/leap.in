@@ -1,0 +1,58 @@
+source leaprc.protein.ff19SB
+source leaprc.gaff
+loadAmberPrep MAA.prepin
+loadAmberPrep MMO.prepin
+loadAmberPrep MAS.prepin
+loadAmberPrep NCY.prepin
+loadAmberPrep GNC.prepin
+loadAmberPrep E9V.prepin
+loadAmberPrep MLE.prepin
+loadAmberPrep EME.prepin
+loadAmberPrep SAR.prepin
+loadAmberPrep MME.prepin
+loadAmberPrep MEA.prepin
+loadAmberPrep SOQ.prepin
+loadAmberPrep MYS.prepin
+loadAmberPrep DAL.prepin
+loadAmberPrep DAR.prepin
+loadAmberPrep DIL.prepin
+loadAmberPrep DLE.prepin
+loadAmberPrep DPN.prepin
+loadAmberPrep DPR.prepin
+loadAmberPrep DVA.prepin
+loadAmberPrep 33X.prepin
+loadAmberPrep XIL.prepin
+loadAmberPrep MLU.prepin
+loadAmberPrep ZAE.prepin
+loadAmberParams MAA.frcmod
+loadAmberParams MMO.frcmod
+loadAmberParams MAS.frcmod
+loadAmberParams NCY.frcmod
+loadAmberParams GNC.frcmod
+loadAmberParams E9V.frcmod
+loadAmberParams MLE.frcmod
+loadAmberParams EME.frcmod
+loadAmberParams SAR.frcmod
+loadAmberParams MME.frcmod
+loadAmberParams MEA.frcmod
+loadAmberParams SOQ.frcmod
+loadAmberParams MYS.frcmod
+loadAmberParams DAL.frcmod
+loadAmberParams DAR.frcmod
+loadAmberParams DIL.frcmod
+loadAmberParams DLE.frcmod
+loadAmberParams DPN.frcmod
+loadAmberParams DPR.frcmod
+loadAmberParams DVA.frcmod
+loadAmberParams 33X.frcmod
+loadAmberParams XIL.frcmod
+loadAmberParams MLU.frcmod
+loadAmberParams ZAE.frcmod
+temp = {DIL DPR LEU DLE DPR MLE DPN LEU 33X DIL PRO}
+mol=loadPDBusingseq /data/lab/czg/alphafold_finetune/relaxed/B_D11.1_model_1_model_2_ptm_ft.pdb temp
+bond mol.1.N mol.11.C
+savePdb mol 1.pdb
+check mol
+savePdb mol 2.pdb
+saveAmberParm mol system.prmtop system.inpcrd
+quit
