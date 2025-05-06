@@ -1,0 +1,1 @@
+Replace the params_model_2_ptm.npz file from alphafold.
